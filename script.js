@@ -11,3 +11,18 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
+
+/* Get player's choice: rock, paper or scissors. Disallow other options */
+function getPlayerChoice() {
+    let choice = prompt('Pick: rock, paper or scissors', '').toLowerCase();
+    
+    if(choice === 'rock' | choice === 'paper' | choice === 'scissors') {
+        return choice;
+    } else {
+        while(choice !== 'rock' && choice !== 'paper' && choice !== 'scissors'){
+            choice = prompt('Invalid choice. Choose rock, paper or scissors.', '').toLowerCase();
+        }
+        return choice;
+    }
+}
+
