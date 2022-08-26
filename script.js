@@ -29,7 +29,10 @@ function getPlayerChoice() {
 }
 
 /* F3 - Play 1 round of rock, paper, scissors. Return victory, loss or tie
-    Requires F1, F2 and F5 */
+    Requires F1 and F2 */
+let wins = 0;
+let losses = 0;
+let ties = 0;
 
 function playRound() {
     const computerSelection = getComputerChoice();
@@ -66,12 +69,8 @@ function resetGame() {
 /* F5 - Play a 5 round game. Return final victory, loss or tie. Restart game
     Requires F3 and F4 */
 function game() {
-    let wins = 0;
-    let losses = 0;
-    let ties = 0;
     let result;
-
-    
+  
     for(let i = 0; i < 5; i++) {
 
         console.log(playRound());
