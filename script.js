@@ -29,10 +29,7 @@ function getPlayerChoice() {
 }
 
 /* F3 - Play 1 round of rock, paper, scissors. Return victory, loss or tie
-    Requires F1 and F2 */
-let wins = 0;
-let losses = 0;
-let ties = 0;
+    Requires F1, F2 and F5 */
 
 function playRound() {
     const computerSelection = getComputerChoice();
@@ -55,12 +52,26 @@ function playRound() {
     }
 }
 
-/* F4 - Play a 5 round game. Return final victory, loss or tie
-    Requires F3 */
+/* F4 - Reset and restart the game
+    Requires F5 */
+function resetGame() {
+    alert('Play again?');
+    wins = 0;
+    losses = 0;
+    ties = 0;
 
+    game();
+}
+
+/* F5 - Play a 5 round game. Return final victory, loss or tie. Restart game
+    Requires F3 and F4 */
 function game() {
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
     let result;
 
+    
     for(let i = 0; i < 5; i++) {
 
         console.log(playRound());
@@ -68,24 +79,28 @@ function game() {
     }
 
     if(wins > losses) {
-        return result = `You Won! Yay!
+        console.log(result = `You Won! Yay!
         Games won: ${wins}
         Games lost: ${losses}
-        Games tied: ${ties}`;
+        Games tied: ${ties}`);
         
     } else if(wins < losses) {
-        return result = `You Lost! Maybe next time...
+        console.log(result = `You Lost! Maybe next time...
         Games won: ${wins}
         Games lost: ${losses}
-        Games tied: ${ties}`;
+        Games tied: ${ties}`);
+        
     } else if(wins === losses) {
-        return result = `You tried, you tied!
+        console.log(result = `You tried, you tied!
         Games won: ${wins}
         Games lost: ${losses}
-        Games tied: ${ties}`;
+        Games tied: ${ties}`);
+        
     } else {
-        return 'Oops! Something went wrong. Sorry.'
+        console.log('Oops! Something went wrong. Sorry.');
     }
+
+    resetGame();
 }
 
 console.log(game());
