@@ -68,7 +68,7 @@ function resetGame() {
 
 /* F5 - Play a 5 round game. Return final victory, loss or tie. Restart game
     Requires F3 and F4 */
-function game() {
+/* function game() {
     let result;
   
     for(let i = 0; i < 5; i++) {
@@ -100,6 +100,6 @@ function game() {
     }
 
     resetGame();
-}
+} 
 
-console.log(game());
+console.log(game()); */
