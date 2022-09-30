@@ -1,3 +1,7 @@
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
+
 
 /* F1 - Generate random choice: rock, paper or scissors */
 
@@ -13,7 +17,7 @@ function getComputerChoice() {
     }
 }
 
-/* F2 - Get player's choice: rock, paper or scissors. Disallow other inputs */
+/* F2 - Get player's choice: rock, paper or scissors. Disallow other inputs
 
 function getPlayerChoice() {
     let choice = prompt('Pick: rock, paper or scissors', '').toLowerCase();
@@ -26,7 +30,7 @@ function getPlayerChoice() {
         }
         return choice;
     }
-}
+} */
 
 /* F3 - Play 1 round of rock, paper, scissors. Return victory, loss or tie
     Requires F1 and F2 */
@@ -34,26 +38,34 @@ let wins = 0;
 let losses = 0;
 let ties = 0;
 
-function playRound() {
+function playRound(choice) {
     const computerSelection = getComputerChoice();
-    const playerSelection = getPlayerChoice();
+    const playerSelection = choice;
 
     if((playerSelection === 'rock' && computerSelection === 'scissors') | (playerSelection === 'scissors' && computerSelection === 'paper') | (playerSelection === 'paper' && computerSelection === 'rock')) {
         const winMessage = `You win this round! ${playerSelection} beats ${computerSelection}.`;
         wins += 1;
+        console.log(winMessage);
         return winMessage;
     } else if((playerSelection === 'rock' && computerSelection === 'paper') | (playerSelection === 'scissors' && computerSelection === 'rock') | (playerSelection === 'paper' && computerSelection === 'scissors')) {
         const loseMessage = `You lose this round! ${computerSelection} beats ${playerSelection}.`;
         losses += 1;
+        console.log(loseMessage);
         return loseMessage;
     } else if (playerSelection === computerSelection) {
         const tieMessage = `It's a tie this round! ${playerSelection} and ${computerSelection}.`;
         ties += 1;
+        console.log(tieMessage);
         return tieMessage;
     } else {
-        return 'Oops! Something went wrong. Sorry.'
+        console.log('Oops! Something went wrong. Sorry.')
+        return 'Oops! Something went wrong. Sorry.';
     }
 }
+
+btnRock.addEventListener('click', () => playRound("rock"));
+btnPaper.addEventListener('click', () => playRound("paper"));
+btnScissors.addEventListener('click', () => playRound("scissors"));
 
 /* F4 - Reset and restart the game
     Requires F5 */
