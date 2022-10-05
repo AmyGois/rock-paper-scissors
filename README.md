@@ -7,3 +7,5 @@ A small game to showcase basic Javascript skills:
 -> Functions
 
 -> Conditionals
+
+-> DOM manipulation
