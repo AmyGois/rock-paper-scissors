@@ -5,40 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
 </head>
+
 <body>
     <h1>Rock Paper Scissors</h1>
-    <div>
-        <p>Choose your weapon!</p>
-        <div>
-            <button id="rock">
-                <img src="./images/my_rock.png" alt="rock">
-                <p>Rock</p>    
-            </button>
-            <button id="paper">
-                <img src="./images/my_paper.png" alt="paper">
-                <p>Paper</p>
-            </button>
-            <button id="scissors">
-                <img src="./images/my_scissors.png" alt="scissors">
-                <p>Scissors</p>
-            </button>
-        </div>
+    <p>Can you defeat the computer? The first to win 5 rounds wins the game.</p>
+    <p>Choose your weapon!</p>
+    <div class="container">
+        <button id="rock">
+            <img src="./images/my_rock.png" alt="rock">
+            <p>Rock</p>    
+        </button>
+        <button id="paper">
+            <img src="./images/my_paper.png" alt="paper">
+            <p>Paper</p>
+        </button>
+        <button id="scissors">
+            <img src="./images/my_scissors.png" alt="scissors">
+            <p>Scissors</p>
+        </button>
     </div>
-
+    
     <div id="resetGame" style="display: none;">
         <p id="victoryStatus"></p>
         <button id="resetGameBtn">Play again</button>
     </div>
 
-    <div>
-        <div>
+    <div class="container">
+        <div class="box">
             <p>Your Choice:</p>
             <img id="playerChoiceImg">
             <p id="playerChoiceName"></p>
         </div>
-        <div>
+        <div class="box">
             <p>Computer's choice:</p>
             <img id="computerChoiceImg">
             <p id="computerChoiceName"></p>
@@ -47,17 +48,17 @@
     <p id="roundResult"></p>
 
     <h2>Rounds won</h2>
-    <div>
-        <div>
+    <div class="container">
+        <div class="box">
             <p>You:</p>
             <p id="playerWins">0</p>
         </div>
-        <div>
+        <div class="box">
             <p>Ties:</p>
             <p id="ties">0</p>
         </div>
 
-        <div>
+        <div class="box">
             <p>Computer:</p>
             <p id="computerWins">0</p>
         </div>
